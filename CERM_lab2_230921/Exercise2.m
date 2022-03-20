@@ -20,8 +20,8 @@ plot(xmesh, dr(xmesh),'b', xmesh, drxmesh, 'ro');
 error = (dr(xmesh)- drxmesh);
 abs_err_2 = norm(error, 2);
 abs_err_inf = norm(error, inf);
-rel_err_2 = abs_err_2 / norm(dr(xmesh), 2);
-rel_err_inf = abs_err_inf ./ norm(dr(xmesh), inf);
+rel_err_2 = abs_err_2 / norm( dr(xmesh), 2 );
+rel_err_inf = abs_err_inf ./ norm( dr(xmesh), inf );
 
     
 
