@@ -25,7 +25,7 @@ grid on
 x2 = 2.7;
 x1 = 3.15  ;
 
-tolerance = 10e-11;
+tolerance = 10e-10;
 maxIter=200;
 
 

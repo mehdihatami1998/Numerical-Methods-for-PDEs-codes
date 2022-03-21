@@ -22,7 +22,7 @@ grid on
 
 
 x = 1.6;
-tolerance = 10e-12;
+tolerance = 10e-11;
 maxIter = 200;
 
 for i = 1:maxIter
@@ -69,7 +69,7 @@ a = 0.7;
 b = 1;
 xm = (a+b) / 2;
 
-tolerance = 10e-12;
+tolerance = 10e-11;
 maxIter = 200;
 
 for i = 1 : maxIter
