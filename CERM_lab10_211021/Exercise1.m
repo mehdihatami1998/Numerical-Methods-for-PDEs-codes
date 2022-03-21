@@ -1,6 +1,6 @@
 %%
             % Solving a non linear equation
-            % Newthon's Method
+            % Newton Method
 close all
 clear all 
 format long
