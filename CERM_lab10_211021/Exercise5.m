@@ -28,11 +28,11 @@ grid on
 
 tolerance=10e-8;
 maxIter=200;
-x0=1.3;
+x0=1.2;
 for i=1:maxIter
     i
     x1=phi1(x0);
-    if abs(x0-x1)<tolerance
+    if abs(x0-x1) / x0 < tolerance
         break
     end
     x0=x1;
