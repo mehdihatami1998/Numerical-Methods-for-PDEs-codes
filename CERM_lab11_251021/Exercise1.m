@@ -33,11 +33,11 @@ title("EULER Method vs. Exact function")
             % Absolute and Relatve Errors on the Interval
 
 abs_err_EULER = abs( yex(tn) - un );
-rel_err_EULER = abs_err_EULER/ yex(tn);
+rel_err_EULER = abs_err_EULER ./ abs(yex(tn));
 
 figure(2)
 semilogy(tn,rel_err_EULER)
-title("EULER Method vs. Relative Error")
+title("EULER Method, Relative Error")
 
             % Absolute and Relative Errors at Final Time
 
@@ -49,6 +49,7 @@ rel_error_endpoint_EULER = abs( yex(tn(end)) - un(end)) / abs( yex( tn(end) ) )
 
 abs_err_Norminf_EULER = norm( abs_err_EULER, inf )
 rel_err_Norminf_EULER = norm( abs_err_EULER, inf ) / norm( yex(tn),inf )
+% rel_err_Norminf_EULER2 = norm( rel_err_EULER, inf )
 
 
 %%
@@ -89,11 +90,11 @@ title("HEUN Method vs. Exact function")
             % Absolute and Relatve Errors on the Interval
 
 abs_err_HEUN = abs( yex(tn) - un );
-rel_err_HEUN = abs_err_HEUN/ yex(tn);
+rel_err_HEUN = abs_err_HEUN ./ yex(tn);
 
 figure(4)
 semilogy(tn,rel_err_HEUN)
-title("HEUN Method Relative Error")
+title("HEUN Method, Relative Error")
 
 
             % Absolute and Relative Errors at Final Time
@@ -150,11 +151,11 @@ title("Leapfrog Method vs. Exact function")
             % Absolute and Relatve Errors on the Interval
 
 abs_err_LEAPFROG = abs( yex(tn) - un );
-rel_err_LEAPFROG = abs_err_LEAPFROG/ yex(tn);
+rel_err_LEAPFROG = abs_err_LEAPFROG ./ yex(tn);
 
 figure(6)
 semilogy(tn,rel_err_LEAPFROG)
-title("LEAPFROG Method vs. Relative Error")
+title("LEAPFROG Method, Relative Error")
 
             % Absolute and Relative Errors at Final Time
 
@@ -207,11 +208,11 @@ title("LEAPFROG2 Method vs. Exact function")
             % Absolute and Relatve Errors on the Interval
 
 abs_err_LEAPFROG2 = abs( yex(tn) - un );
-rel_err_LEAPFROG2 = abs_err_LEAPFROG2/ yex(tn);
+rel_err_LEAPFROG2 = abs_err_LEAPFROG2 ./ yex(tn);
 
 figure(6)
 semilogy(tn,rel_err_LEAPFROG2)
-title("LEAPFROG2 Method vs. Relative Error")
+title("LEAPFROG2 Method , Relative Error")
 
             % Absolute and Relative Errors at Final Time
 
