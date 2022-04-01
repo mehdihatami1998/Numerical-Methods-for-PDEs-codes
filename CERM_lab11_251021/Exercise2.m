@@ -6,7 +6,7 @@ close all
 format long
 
             % Defining the Problem and Exact Function
-alpha = 0.05;           
+alpha = 0.001;           
 f = @(t,y) (alpha * 0.5) * cos(t) * ( 1 - y.^2 );
 y_exact = @(t) ( exp( alpha * sin(t) ) - 1) ./ ( exp (alpha * sin(t)) +1);
 
@@ -95,4 +95,4 @@ rel_err_Norminf_EULER2 = norm( abs_err_EULER2, inf ) / norm( y_exact(tn2),inf )
 
 
             % Forward Euler Method Empirical Order Calculation 
-p_emp = -log2(rel_err_Norminf_EULER2/rel_err_Norminf_EULER1)
+p_emp_Euler = -log2(rel_err_Norminf_EULER2/rel_err_Norminf_EULER1)
