@@ -49,7 +49,7 @@ rel_error_endpoint_EULER = abs( yex(tn(end)) - un(end)) / abs( yex( tn(end) ) )
 
 abs_err_Norminf_EULER = norm( abs_err_EULER, inf )
 rel_err_Norminf_EULER = norm( abs_err_EULER, inf ) / norm( yex(tn),inf )
-rel_err_Norminf_EULER2 = norm( rel_err_EULER, inf )
+% rel_err_Norminf_EULER2 = norm( rel_err_EULER, inf )
 
 
 %%
@@ -133,7 +133,7 @@ tn(2,1) = h;
 
 
 f1= f(tn(1,1),un(1,1));
-f2= f(tn(2,1), un(1,1)+h*f1);
+f2= f(tn(2,1), un(1,1)+ h * f1);
 un(2,1) = un(1,1) + 0.5 * h * (f1+f2);
 
 
@@ -196,7 +196,7 @@ un(2,1) = un(1,1) +  h * f(tn(1,1),un(1,1));
 
 for k = 2:N
     tn(k+1, 1)=tn(k, 1) + h;
-    un(k+1, 1)=un(k-1, 1) + 2*h*f(tn(k,1),un(k,1));
+    un(k+1, 1)=un(k-1, 1) + 2 * h * f(tn(k,1),un(k,1));
 end
 
             % Plotting LEAPFROG2 Method approximation vs the Exact answer

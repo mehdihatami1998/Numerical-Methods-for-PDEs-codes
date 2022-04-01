@@ -133,7 +133,7 @@ tn(2,1) = h;
 
 
 f1= f(tn(1,1),un(1,1));
-f2= f(tn(2,1), un(1,1)+h*f1);
+f2= f(tn(2,1), un(1,1)+ h * f1);
 un(2,1) = un(1,1) + 0.5 * h * (f1+f2);
 
 
@@ -196,7 +196,7 @@ un(2,1) = un(1,1) +  h * f(tn(1,1),un(1,1));
 
 for k = 2:N
     tn(k+1, 1)=tn(k, 1) + h;
-    un(k+1, 1)=un(k-1, 1) + 2*h*f(tn(k,1),un(k,1));
+    un(k+1, 1)=un(k-1, 1) + 2 * h * f(tn(k,1),un(k,1));
 end
 
             % Plotting LEAPFROG2 Method approximation vs the Exact answer
@@ -228,5 +228,5 @@ rel_err_Norminf_LEAPFROG2 = norm( abs_err_LEAPFROG2, inf ) / norm( yex(tn),inf )
 
 % So based on the given answers by the code above, when we use Forward
 % Euler Method as the initial condition for the Leapfrog method, the error
-% is smaller comparing with the codes in which we used Heun method for
+% is larger comparing with the codes in which we used Heun method for
 % calculating initial points for the leapfrog method.
