@@ -62,7 +62,7 @@ y0 = 10;
 T = 5;
 
 
-options_ode45 = odeset('RelTol', 10e-7); %from here I have removed , 'MaxStep',0.01
+options_ode45 = odeset('RelTol', 10e-7); %from here I have removed 
 [tn, un] = ode45 (f, [0: 0.01: 5], 10, options_ode45);
 
 tmesh = [0: 0.01: T]';
