@@ -24,8 +24,8 @@ N2 = T/h2;
 un1 = zeros(round(N1+1),1);
 tn1 = zeros(round(N1+1),1);
 
-un2 = zeros(round(N2+1),1);
-tn2 = zeros(round(N2+1),1);
+un2 = zeros(round(N2+1));
+tn2 = zeros(N2+1));
 
 un1(1,1) = y0;
 un2(1,1) = y0;

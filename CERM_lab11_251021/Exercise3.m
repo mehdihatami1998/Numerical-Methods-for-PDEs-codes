@@ -1,5 +1,7 @@
             % Solving ODEs
             % Heun Method Empirical Order
+          
+            % Heun Method Empirical Order
 clc
 clear all
 close all
@@ -29,19 +31,19 @@ un1(1,1) = y0;
 un2(1,1) = y0;
 
 
-for k = 1:N1
-    tn1(k+1, 1) = tn1(k,1) + h1;
-    f1 = f( tn1(k,1), un1(k,1) );
-    f2 = f( tn1(k+1,1), un1(k,1)+ h1*f1);
-    un1(k+1,1) = un1(k,1) + 0.5* h1 * (f1+f2);
+for k=1 : N1
+    tn1(k+1, 1) = tn1(k, 1) + h1;
+    f1 = f(tn1(k,1), un1(k,1));
+    f2 = f(tn1(k) + h1, un1(k,1) + h1 * f1);
+    un1(k+1,1)=un1(k,1) + 0.5 * h1 * (f1 + f2);
 end
 
 
-for j = 1:N2
-    tn2(j+1, 1) = tn2(j,1) + h2;
-    f1 = f( tn2(j,1), un2(j,1) );
-    f2 = f( tn2(j+1,1), un2(j,1)+ h2*f1);
-    un2(j+1,1) = un2(j,1) + 0.5* h2 * (f1+f2);
+for k=1 : N2
+    tn2(k+1,1) = tn2(k, 1) + h2;
+    f1 = f(tn2(k, 1), un2(k, 1));
+    f2 = f(tn2(k) + h2, un2(k, 1) + h2 * f1);
+    un2(k+1, 1) = un2(k,1) + 0.5 * h2 * (f1 + f2);
 end
 
 
@@ -100,6 +102,7 @@ rel_err_Norminf_Heun2 = norm( abs_err_Heun2, inf ) / norm( y_exact(tn2),inf )
 
             % Heun Method Empirical Order Calculation 
 p_emp_Heun = -log2(rel_err_Norminf_Heun2/rel_err_Norminf_Heun1)
+
 
 %%
             
