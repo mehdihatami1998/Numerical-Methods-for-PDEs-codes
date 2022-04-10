@@ -1,9 +1,5 @@
-% CERM_Lab_251021
-% Exercise 6
-
             % Solving ODEs
             % Using ODE45 Solver
-
 
 clc
 clear all
@@ -107,3 +103,6 @@ abs_InfNorm_LF = norm(abs_err_LF, inf);
 rel_InfNorm_LF = norm(rel_err_LF, inf)
 
 
+            % With respect to the relative error norms on the whole
+            % interval, in this specific case, the Modified Euler method
+            % was the most accurate one aong this three

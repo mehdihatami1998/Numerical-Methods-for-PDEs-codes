@@ -1,3 +1,6 @@
+% CERM_Lab_251021
+% Exercise 2
+
             % Solving ODEs
             % Forward Euler Method Empirical Order
 clc

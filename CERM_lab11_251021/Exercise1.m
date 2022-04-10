@@ -1,3 +1,6 @@
+% CERM_Lab_251021
+% Exercise 1
+
             % Numerical Solutions of ODEs
             % Forward Euler Method
 clc
