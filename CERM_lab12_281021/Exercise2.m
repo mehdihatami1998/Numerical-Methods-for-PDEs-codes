@@ -176,9 +176,9 @@ T = 5;
             % If we increase N1 & N2 to 5000 and 2500 respectively, the
             % error becomes so small so that the empirical estimate cannot
             % work properly.
-            
-N1 = 500; % This is considered RK1
-N2 = 250; % This is considered RK2
+
+N1 = 1000; % This is considered RK1
+N2 = 500; % This is considered RK2
 
 h1 = T/N1;
 h2 = T/N2;

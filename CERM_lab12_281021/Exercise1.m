@@ -110,7 +110,7 @@ rel_err_Norminf_RK2 = norm( abs_err_RK2, inf ) / norm( yex(tn2),inf );
 
 
             % Forward RK Method Empirical Order Calculation 
-p_emp_RK = -log2(rel_err_Norminf_RK1/rel_err_Norminf_RK2)
+p_emp_RK3 = -log2(rel_err_Norminf_RK1/rel_err_Norminf_RK2)
 
 %%
             
@@ -231,5 +231,5 @@ rel_err_Norminf_AB2 = norm( abs_err_AB2, inf ) / norm( yex(tn2),inf );
 
 
             % Forward AB Method Empirical Order Calculation 
-p_emp_AB = -log2(rel_err_Norminf_AB1/rel_err_Norminf_AB2)
+p_emp_AB3 = -log2(rel_err_Norminf_AB1/rel_err_Norminf_AB2)
 close all
