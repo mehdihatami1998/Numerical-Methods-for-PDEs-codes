@@ -56,6 +56,9 @@ for k = 2:N
         - 0.5 * f(tnAB2(k-1, 1), unAB2(k-1, 1)));
 end
 
+
+
+
 figure(2)
 plot(tref, uref, 'r', tnAB2, unAB2, 'k*')
 title('Approximate solution using two step Adam Bashforth method')

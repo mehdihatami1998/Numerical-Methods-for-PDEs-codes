@@ -57,7 +57,7 @@ optionsImplicit = optimoptions('fsolve', 'Display','none', FunctionTolerance=10e
 
 for k = 1 : Ni
     tni(k+1, 1) = tni(k, 1) + hi;
-    g = @(y) y - uni(k, 1) - h * f(tn(k+1), y);
+    g = @(y) y - uni(k, 1) - h * f(tni(k+1), y);
     uni(k+1, 1) = fsolve (g, uni(k, 1), optionsImplicit);
 end
 
