@@ -146,14 +146,11 @@ title('Approximate solution using BDF3 Method')
 
 
 %%%%%%%%%%%%%%%%%% Comments %%%%%%%%%%%%%%%%%%
-
-    % If we set N1 = 10 and N2 = 20, the P_emp would be exactly 2,
-    % But if we increase N1 and N2 to about 500 and 1000, the truncation
-    % error will play a role here and because the steps are very small and
-    % our error is of the same order of convergance with machine accuracy,
-    % So the P_emp wouldn't work in this case.
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
 
       
             % Solving ODEs
