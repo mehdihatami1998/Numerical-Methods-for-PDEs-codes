@@ -95,7 +95,7 @@ P_emp_Heun = -log2(normInfHeunN2/normInfHeunN1)
 
 %%%%%%%%%%%%%%%%%% Comments %%%%%%%%%%%%%%%%%%
  
-    % CN Method's results are totally coherent with the theory.
+    % for N1 = 500 and N2 = 1000, the result of CN is okay
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -110,7 +110,7 @@ y0 = [100; 200];
 
 f = @(t, y) A*y + g(t);
 T = 2;
-N = [100;200]
+N = [5000;10000]
             % Solving with N1 
 
 
@@ -131,8 +131,8 @@ for k = 1 : N1
     tnCNN1(k+1, 1) = tnCNN1(k, 1) + h1;
 
      g = @(y) y - unCNN1(k, :)' - 0.5 * h1 * (f(tnCNN1(k+1,1), y) + ...
-        f(tnCNN1(k, 1), unCNN1(k, 1)'));
-    unCNN1(k+1, :) = fsolve(g, unCNN1(k, :)', options);
+        f(tnCNN1(k, 1), unCNN1(k, :)'));
+    unCNN1(k+1, :) = fsolve(g, unCNN1(k, :)');
 end
 
 
@@ -144,18 +144,13 @@ normInfCNN1 = norm(rel_err_N1, inf)
 
 
 
-
-
-
-
-%%
             % Solving with N2 
 
 N2 = N(2, 1);
 h2 = T/N2;
 
 options = odeset('RelTol',10e-12);
-[tref, uref] = ode23tb(f, [0 : h1 : T], y0, options);
+[tref, uref] = ode23tb(f, [0 : h2 : T], y0, options);
 
 
 unCNN2 = zeros(N2 + 1, 2);
@@ -168,13 +163,9 @@ for k = 1 : N2
        tnCNN2(k+1, 1) = tnCNN2(k, 1) + h2;
 
      g = @(y) y - unCNN2(k, :)' - 0.5 * h2 * (f(tnCNN2(k+1,1), y) + ...
-        f(tnCNN2(k, 1), unCNN2(k, 1)'));
+        f(tnCNN2(k, 1), unCNN2(k, :)'));
     unCNN2(k+1, :) = fsolve(g, unCNN2(k, :)', options);
 end
-
-
-%  g=@(y) y-un_CN(k,:)'-0.5*h*(f(tn_CN(k+1,1)',y)+f(tn_CN(k,1)',un_CN(k,:)'));
-%     un_CN(k+1,:)=fsolve(g,un_CN(k,:)');
 
 
 figure(2)
