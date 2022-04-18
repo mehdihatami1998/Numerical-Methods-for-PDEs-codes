@@ -1,13 +1,13 @@
 % CERM_Lab_041121
-% Exercise 3
-% Heun Method
+% Exercise 1
+
 
 
 
 
 %%%%%%%%%%%%%%%%%% Comments %%%%%%%%%%%%%%%%%%
 
-    % Heun Method is much faster than the Implicit methods generally, BDF3
+    % explicit  Method is much faster than the Implicit methods generally, BDF3
     % in this specific case. but when the time steps are very large (very
     % small Ns) the explicit methods won't work, as it is the case here
     % with N = 20, but if we increase it, it would be working properly.
