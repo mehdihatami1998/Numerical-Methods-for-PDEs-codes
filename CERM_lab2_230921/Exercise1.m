@@ -24,7 +24,7 @@ for i = 1: n
 end
 figure(1)
 plot(xmesh, df(xmesh), 'ko',xmesh, dfxmesh, 'b');
-err=df(xmesh)- dfxmesh;
+err=abs(df(xmesh)- dfxmesh);
 
 figure(2)
 semilogy(xmesh, err, 'rd-')
