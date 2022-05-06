@@ -18,8 +18,8 @@ T = 5;
 
             % Defining conditions for two solutions with N1 and N2
 
-N1 = 5000000; % This is considered AB1
-N2 = 2500000; % This is considered AB2
+N1 = 500; % This is considered AB1
+N2 = 250; % This is considered AB2
 
 h1 = T/N1;
 h2 = T/N2;
@@ -36,8 +36,8 @@ un2(1,1) = y0;
 
 tn2(2, 1) = h2;
             
-            % Using Heun Method for Initial Conditions
-            % First Initial Point
+%             % Using Heun Method for Initial Conditions
+%             % First Initial Point
 tn1(2, 1) = h1;
 f1 = f(tn1(1, 1), un1(1, 1));
 f2 = f(tn1(2, 1), un1(1, 1) + h1 * f1);
@@ -50,25 +50,35 @@ f2 = f(tn2(2, 1), un2(1, 1) + h2 * f1);
 un2(2, 1) = un2(1, 1) + 0.5 * h2 *(f1 + f2);
 
             % Second Initial 
-tn1(3, 1) = h1;
+tn1(3, 1) = 2 * h1;
 f1 = f(tn1(2, 1), un1(2, 1));
 f2 = f(tn1(3, 1), un1(2, 1) + h1 * f1);
 un1(3, 1) = un1(2, 1) + 0.5 * h1 * (f1 + f2);
 
 
-tn2(3, 1) = h2;
+tn2(3, 1) = 2 * h2;
 f1 = f(tn2(2, 1), un2(2, 1));
 f2 = f(tn2(3, 1), un2(2, 1) + h2 * f1);
 un2(3, 1) = un2(2, 1) + 0.5 * h2 *(f1 + f2);
 
+% 
 
-
+            % Initial conditions with exact answers
+            % (Uncomment this part to get the empirical convergence of Adam-
+            % Bashforth 3 step method which should be 3)
+%             
+% tn1(2, 1) =  h1;
+% tn2(2, 1) =  h2;
+% 
+% un1(2,1) = yex(tn1(2, 1));
+% un2(2,1) = yex(tn2(2, 1));
+% 
 % tn1(3, 1) = 2 * h1;
 % tn2(3, 1) = 2 * h2;
 % 
 % un1(3,1) = yex(tn1(3, 1));
 % un2(3,1) = yex(tn2(3, 1));
-
+% 
 
 tic
 for k = 3 : N1

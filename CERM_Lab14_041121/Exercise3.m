@@ -94,12 +94,12 @@ close all
 format long 
 
 
-mu = 5;
+mu = 20;
 f = @(t, y) [y(2);-y(1)+ mu * (1 - y(1)^2) * y(2)];
 
 y0 = [1;-1];
 T = 20;
-N = 100;
+N = 1000;
 h = T/N;
 
 options = odeset('RelTol', 10^-10, 'MaxStep', h);

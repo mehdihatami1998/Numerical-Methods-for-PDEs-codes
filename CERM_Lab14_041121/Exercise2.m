@@ -11,7 +11,8 @@ f = @(t, y) [y(2);-y(1)-y(2)];
 y0 = [1;0];
 T = 4;
 
-yex=@(t) exp(-t/2) .* cos(sqrt(3) / 2 * t) + 1/sqrt(3) * exp(-t/2) .* sin(sqrt(3) / 2 * t);
+yex=@(t) exp(-t/2) .* cos(sqrt(3) / 2 * t) + 1/sqrt(3) * ...
+    exp(-t/2) .* sin(sqrt(3) / 2 * t);
 
 N = 40;
 h = T / N;
@@ -170,7 +171,7 @@ ErrorBDF2 = norm(relErrBDF2, inf)
 unLeapfrog = zeros(N+1, 2);
 tnLeapfrog = zeros(N+1, 1);
 
-unLeapfrog(1, :) = y0';
+unLeapfrog(1, :) = y0'; % this is friction in physical term;
 unLeapfrog(2, :) = unAB2(2, :)';
 tnLeapfrog(2, :) = h;
 tic
